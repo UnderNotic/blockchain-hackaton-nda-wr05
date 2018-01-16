@@ -18,7 +18,7 @@ Show cluster users:
 `CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp peer channel list`
 
 Show logs for peer:    
-`sudo docker logs -f peer0.org1.example.com `
+`sudo docker logs -f peer0.org1.example.com`
 
 Register chaincode for peer:   
 `CORE_CHAINCODE_ID_NAME='my_chaincode:v0' npm start -- --peer.address grpc://192.168.1.64:7052`
@@ -40,7 +40,6 @@ CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace
 
 # Idea
 
-idea!
 
 Permissioning on smart contract level.
 
@@ -48,10 +47,13 @@ Actual data encrypted by secret only know by blockchain.
 
 Data structure:
     CreatedAt: timestamp
-{
     EditedAt: timestamps
     Data: encryped paper
-}
+    SignaturesNeeded:
+    Signatures:
+    Signed: can watch and signed document
+    ReadOnly: can only watch life cycle
+
 
 We cannot use channel for every paper because:
 - it will not scale
@@ -59,3 +61,25 @@ We cannot use channel for every paper because:
 - quering all that would not possible for example how many documents are in the system,
 when that was created
 
+
+# NDA Lifecycle
+Life Cycle:
+-  Request/Edit
+    - upload a pdf
+    - list of users who can view 
+    - list of users who can edit
+    - list of user who need to to assign
+- Draft
+    - upload new pdfs
+- Sign
+    - Pdf awaiting for signing
+- Approved
+    - Triggered when all signers signed pdf
+
+# UI
+- Login screen (one input box for login name) view
+- Uploading pdf with all data watch nda lifecycle view
+- Editing pdf (same as uploading) view
+- Signing pdf view
+- Approved view
+- General view showing all ndas and lifecycle state

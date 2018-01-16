@@ -1,5 +1,5 @@
-./basic-network/crypto-config/
-./basic-network/config/
+crypto-config/
+config/
 
 # Logs
 logs

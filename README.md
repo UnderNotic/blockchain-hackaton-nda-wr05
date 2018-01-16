@@ -23,14 +23,19 @@ Show logs for peer:
 Register chaincode for peer:   
 `CORE_CHAINCODE_ID_NAME='my_chaincode:v0' npm start -- --peer.address grpc://192.168.1.64:7052`
 
+Install and instantiate 
+`
+CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp ./peer chaincode install -l node -n my_chaincode -v v0 -p/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/nodejs-blockchain-code
+`
+
 Initialize contract:   
 `
-CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp peer chaincode  instantiate -l node -n my_chaincode -v v0 -C mychannel -c '{"args": ["functionName", "varb"]}' -o localhost:7050
+CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp ./peer chaincode instantiate -l node -n my_chaincode -v v0 -C mychannel -c '{"args": ["functionName", "varb"]}' -o localhost:7050
 `
 
 Invoke contract:
 `
-CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp peer chaincode  invoke -l node -n my_chaincode -v v0 -C mychannel -c '{"args": ["functionName", "varb"]}' -o localhost:7050
+CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp ./peer chaincode invoke -l node -n my_chaincode -v v0 -C mychannel -c '{"args": ["functionName", "varb"]}' -o localhost:7050
 `
 
 # Idea

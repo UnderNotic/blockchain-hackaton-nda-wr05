@@ -9,36 +9,19 @@ User: teamuser
 Pass: Password123*
 
 # Starting
-sudo ./basic-network/start.sh
+`https://hyperledger-fabric.readthedocs.io/en/v1.1.0-preview/write_first_app.html`
 
 # Commands
-Show cluster users:   
-`CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp ./peer channel list`
-
 Show logs for peer:   PEER   
 `sudo docker logs -f peer0.org1.example.com`
 
-Register chaincode for peer:   
-`CORE_CHAINCODE_ID_NAME='my_chaincode:v0' npm start -- --peer.address grpc://192.168.1.64:7052`
+Start cluster:
+`./startFabric.sh node`
 
-Install and instantiate 
-`
-CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp ./peer chaincode install -l node -n my_chaincode -v v0 -p/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/nodejs-blockchain-code
-`
-
-Initialize contract:   
-`
-CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp ./peer chaincode instantiate -l node -n my_chaincode -v v0 -C mychannel -c '{"args": ["functionName", "varb"]}' -o localhost:7050
-`
-
-Invoke contract:
-`
-CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp ./peer chaincode invoke -l node -n my_chaincode -v v0 -C mychannel -c '{"args": ["functionName", "varb"]}' -o localhost:7050
-`
+Stop cluster:
+basic-network `./stop.sh`
 
 # Idea
-
-
 Permissioning on smart contract level.
 
 Actual data encrypted by secret only know by blockchain.

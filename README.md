@@ -1,7 +1,6 @@
 # Blockchain hackaton
 Here is stored hyper ledge fabric code to solve nda problem
 
-
 # Azure VM
 
 Ip: 52.224.163.193
@@ -9,15 +8,14 @@ Ip: 52.224.163.193
 User: teamuser
 Pass: Password123*
 
-
 # Starting
 sudo ./basic-network/start.sh
 
 # Commands
 Show cluster users:   
-`CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp peer channel list`
+`CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganizations/org1.example.com/users/Admin\@org1.example.com/msp ./peer channel list`
 
-Show logs for peer:    
+Show logs for peer:   PEER   
 `sudo docker logs -f peer0.org1.example.com`
 
 Register chaincode for peer:   

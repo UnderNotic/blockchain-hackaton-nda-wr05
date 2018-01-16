@@ -1,3 +1,6 @@
+./basic-network/crypto-config/
+./basic-network/config/
+
 # Logs
 logs
 *.log

@@ -14,13 +14,18 @@ Pass: Password123*
 sudo ./basic-network/start.sh
 
 # Commands
-`
-CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganisations/org1.example.com/users/Admin\@org1.example.com/msp peer channel list
-`
+`CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganisations/org1.example.com/users/Admin\@org1.example.com/msp peer channel list`
 
 Show logs for peer:    
 `sudo docker logs -f peer0.org1.example.com `
 
+Register chaincode for peer:   
+`CORE_CHAINCODE_ID_NAME='my_chaincode:v0' npm start -- --peer.address grpc://192.168.1.64:7052`
+
+Initialize contract:   
+`
+CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganisations/org1.example.com/users/Admin\@org1.example.com/msp peer chaincode  instantiate -l node -n my_chaincode -v v0 -C mychannel -c '{"args": ["functionName", "varb"]}' -o localhost:7050
+`
 
 # Idea
 

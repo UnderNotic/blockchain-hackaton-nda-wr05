@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-blockchain-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "my_chaincode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node my_chaincode.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fabric-shim": "^1.0.0-preview"
+  }
+}

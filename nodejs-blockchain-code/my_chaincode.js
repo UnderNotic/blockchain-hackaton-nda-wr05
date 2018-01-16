@@ -1,4 +1,4 @@
-udi const shim = require("fabric-shim");
+const shim = require("fabric-shim");
 
 class Chaincode{
     async Init(stub){

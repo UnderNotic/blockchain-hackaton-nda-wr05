@@ -10,6 +10,18 @@ User: teamuser
 Pass: Password123*
 
 
+# Starting
+sudo ./basic-network/start.sh
+
+# Commands
+`
+CORE_PEER_LOCALMSPID=Org1MSP CORE_PEER_MSPCONFIG_PATH=/home/undernotic/workspace/blockchain-hackaton/blockchain-hackaton-nda-wr05/basic-network/crypto-config/peerOrganisations/org1.example.com/users/Admin\@org1.example.com/msp peer channel list
+`
+
+Show logs for peer:    
+`sudo docker logs -f peer0.org1.example.com `
+
+
 # Idea
 
 idea!

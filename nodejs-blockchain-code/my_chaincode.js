@@ -1,4 +1,4 @@
-const shim = require("fabric-shim");
+udi const shim = require("fabric-shim");
 
 class Chaincode{
     async Init(stub){
@@ -32,13 +32,6 @@ class Chaincode{
     async queryMineNdas(stub){
         
     }
-
-
-
-
-
-
-
-
 }
+
 shim.start(new Chaincode());
